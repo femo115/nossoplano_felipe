@@ -18,6 +18,18 @@
 <link rel="stylesheet" th:href="@{/css/main.css}"
 	href="../../css/main.css" />
 
+<script>
+$('#exampleModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var recipient = button.data('whatever') // Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this)
+  modal.find('.modal-title').text('New message to ' + recipient)
+  modal.find('.modal-body input').val(recipient)
+})
+</script>
+	
 <style>
 h3 {
     text-align: center;
@@ -28,7 +40,35 @@ h3 {
 	<nav class="navbar navbar-dark bg-dark">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">Entrar</a>
+				<a class="navbar-brand text-white" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Entrar</a>
+				<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalLabel">Autenticação</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<form>
+									<div class="form-group">
+										<label for="exampleInputEmail1">Email</label>
+										<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entre com email">
+									</div>
+									<div class="form-group">
+										<label for="exampleInputPassword1">Senha</label>
+										<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+									</div>						
+								</form>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+								<button type="button" class="btn btn-primary">Entrar</button>
+							</div>
+						</div>
+					</div>
+				</div>
 				<a class="navbar-brand" href="register/register.html">Cadastrar-se</a>
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
@@ -41,68 +81,69 @@ h3 {
 	<div style="height: 5rem;">
 		<h3> Nosso Plano </h3>
 	</div>
-	<div class="row">
-		<div class="col-sm-6">
-			<div class="card">
-				<div class="card-body">
-					<h4 class="card-title">Matemática</h4>
-					<!--<p class="card-text">Conteúdo programático de matemática do ensino fundamental.</p>-->
-					<a href="courses/courses.html" class="btn btn-primary">Acessar Conteúdo</a>
+	<div class="jumbotron">
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title">Matemática</h4>
+						<p class="card-text">Conteúdo programático de matemática do ensino fundamental.</p>
+						<a href="courses/courses.html" class="btn btn-primary">Acessar Conteúdo</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title">Ciências</h4>
+						<p class="card-text">Conteúdo programático de ciências do ensino fundamental.</p>
+						<a href="courses/courses.html" class="btn btn-primary">Acessar Conteúdo</a>
+					</div>
 				</div>
 			</div>
 		</div>
-		<div class="col-sm-6">
-			<div class="card">
-				<div class="card-body">
-					<h4 class="card-title">Ciências</h4>
-					<!--<p class="card-text">Conteúdo programático de ciências do ensino fundamental.</p>-->
-					<a href="courses/courses.html" class="btn btn-primary">Acessar Conteúdo</a>
+		<div style="height: 5rem;"></div>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title">Portugûes</h4>
+						<p class="card-text">Conteúdo programático de português do ensino fundamental.</p>
+						<a href="courses/courses.html" class="btn btn-primary">Acessar Conteúdo</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title">História</h4>
+						<p class="card-text">Conteúdo programático de história do ensino fundamental.</p>
+						<a href="courses/courses.html" class="btn btn-primary">Acessar Conteúdo</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div style="height: 5rem;"></div>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title">Geografia</h4>
+						<p class="card-text">Conteúdo programático de geografia do ensino fundamental.</p>
+						<a href="courses/courses.html" class="btn btn-primary">Acessar Conteúdo</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="card-title">Educação Física</h4>
+						<p class="card-text">Conteúdo programático de educação física do ensino fundamental.</p>
+						<a href="courses/courses.html" class="btn btn-primary">Acessar Conteúdo</a>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div style="height: 5rem;"></div>
-	<div class="row">
-		<div class="col-sm-6">
-			<div class="card">
-				<div class="card-body">
-					<h4 class="card-title">Portugûes</h4>
-					<p class="card-text">Conteúdo programático de português do ensino fundamental.</p>
-					<a href="courses/courses.html" class="btn btn-primary">Acessar Conteúdo</a>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-6">
-			<div class="card">
-				<div class="card-body">
-					<h4 class="card-title">História</h4>
-					<p class="card-text">Conteúdo programático de história do ensino fundamental.</p>
-					<a href="courses/courses.html" class="btn btn-primary">Acessar Conteúdo</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div style="height: 5rem;"></div>
-	<div class="row">
-		<div class="col-sm-6">
-			<div class="card">
-				<div class="card-body">
-					<h4 class="card-title">Geografia</h4>
-					<p class="card-text">Conteúdo programático de geografia do ensino fundamental.</p>
-					<a href="courses/courses.html" class="btn btn-primary">Acessar Conteúdo</a>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-6">
-			<div class="card">
-				<div class="card-body">
-					<h4 class="card-title">Educação Física</h4>
-					<p class="card-text">Conteúdo programático de educação física do ensino fundamental.</p>
-					<a href="courses/courses.html" class="btn btn-primary">Acessar Conteúdo</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	
 </body>
 </html>

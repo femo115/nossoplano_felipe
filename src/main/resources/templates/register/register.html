@@ -27,7 +27,35 @@ h3 {
 	<nav class="navbar navbar-dark bg-dark">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">Entrar</a>
+				<a class="navbar-brand text-white" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Entrar</a>
+				<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalLabel">Autenticação</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<form>
+									<div class="form-group">
+										<label for="exampleInputEmail1">Email</label>
+										<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entre com email">
+									</div>
+									<div class="form-group">
+										<label for="exampleInputPassword1">Senha</label>
+										<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+									</div>						
+								</form>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+								<button type="button" class="btn btn-primary">Entrar</button>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
@@ -36,27 +64,97 @@ h3 {
 			</div>
 		</div>
 	</nav>
+	
 	<div style="height: 5rem;">
 		<h3> Cadastro de Professor </h3>
-	</div>	
-	<form>
-		<div class="form-group">
-			<label for="exampleInputEmail1">Email address</label>
-			<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-			<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-		</div>
-		<div class="form-group">
-			<label for="exampleInputPassword1">Password</label>
-			<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-		</div>
-		<div class="form-check">
-			<label class="form-check-label">
-			<input type="checkbox" class="form-check-input">
-			Check me out
-			</label>
-		</div>
-		<button type="submit" class="btn btn-primary">Submit</button>
-	</form>
+	</div>
 	
+	<div class="jumbotron">
+		<form>
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="inputEmail4">Email*</label>
+					<input type="email" class="form-control" id="inputEmail4" placeholder="Email" required>
+					<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="inputPassword5">Senha*</label>
+					<input type="password" id="inputPassword5" class="form-control " aria-describedby="passwordHelpBlock">
+					<small id="passwordHelpBlock" class="form-text text-muted">
+						Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+					</small>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group  col-md-6">
+					<label class="col-form-label" for="formGroupExampleInput">Nome*</label>
+					<input type="text" class="form-control" id="formGroupExampleInput" required>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="basic-url">Currículo Lattes*</label>
+					<div class="input-group">
+						<span class="input-group-addon" id="basic-addon3">https://example.com/users/</span>
+						<input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" required>
+					</div>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="basic-url">Website</label>
+					<div class="input-group">
+						<span class="input-group-addon" id="basic-addon3">https://example.com/users/</span>
+						<input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+					</div>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group  col-md-4">
+					<label for="inputState">Entidade</label>
+					<select id="inputState" class="form-control">
+					<option> </option>
+						<option selected>UDESC - Universidade de Santa Catarina</option>
+						<option>UFPR - Universidade Federal do Paraná</option>
+						<option>USP - Universidade de São Paulo</option>
+						<option>UFSC - Universidade Federal de Santa Catarina</option>
+					</select>
+				</div>
+			</div>			
+			<div class="form-row">
+				<div class="form-group col-md-2">
+				<label for="exampleFormControlSelect1">Tempo de Carreira</label>
+					<select class="form-control" id="exampleFormControlSelect1">
+						<option>menos de 1 ano</option>
+						<option>1 a 5 anos</option>
+						<option>5 a 10 anos</option>
+						<option>10 a 15 anos</option>
+						<option>15 a 20 anos</option>
+						<option>mais de 20 anos</option>
+					</select>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group  col-md-6">
+					<label class="col-form-label" for="formGroupExampleInput">Área de Interesse</label>
+					<input type="text" class="form-control" id="formGroupExampleInput">
+				</div>
+			</div>			
+			<div class="form-group col-md-6">
+				<div class="form-check">
+					<small id="passwordHelpBlock" class="form-text text-muted">
+						<p class="text-justify">Todo o conteúdo postado será aberto ao público sem restrições de acesso. A essência dos conteúdo compartilhado terá suas informações, 
+						portanto é de total responsabilidade do colaborado o que está sendo postado.</p>
+					</small>
+					<label class="form-check-label">
+						<input class="form-check-input" type="checkbox" required> Aceito os termos
+					</label>
+				</div>
+			</div>
+			<button type="submit" class="btn btn-primary">Efetivar</button>
+		</form>
+	</div>
 </body>
 </html>

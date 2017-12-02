@@ -3,7 +3,6 @@
 <head>
 <title>Nosso Plano</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<script src="angular.min.js"></script>
 
 <!--
 <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"></link>
@@ -18,12 +17,8 @@
 
 <link rel="stylesheet" th:href="@{/css/main.css}"
 	href="../../css/main.css" />
-<style>
-	h3 {
-		text-align: center;
-	}
-</style>
-</head>
+	
+<script src="angular.min.js"></script>
 <script>
 var app = angular.module('lista',[]);
 app.controller('formulario', function($scope) {
@@ -34,11 +29,46 @@ app.controller('formulario', function($scope) {
     }
 });
 </script>
+
+<style>
+h3 {
+	text-align: center;
+}
+</style>
+</head>
 <body>
 	<nav class="navbar navbar-dark bg-dark">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">Entrar</a>
+				<a class="navbar-brand text-white" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Entrar</a>
+				<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalLabel">Autenticação</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<form>
+									<div class="form-group">
+										<label for="exampleInputEmail1">Email</label>
+										<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entre com email">
+									</div>
+									<div class="form-group">
+										<label for="exampleInputPassword1">Senha</label>
+										<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+									</div>						
+								</form>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+								<button type="button" class="btn btn-primary">Entrar</button>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
@@ -50,35 +80,35 @@ app.controller('formulario', function($scope) {
 	<div style="height: 5rem;">
 		<h3> Lista de Planejamentos </h3>
 	</div>
-	
-	<div ng-app="lista" ng-controller="formulario" ng-init="plan=[
-	{titulo:'Adição e subtração de números naturais', professor:'Charles Miers'},
-	{titulo:'Multiplicação e divisão de números naturais', professor:'Charles Miers'},
-	{titulo:'Números primos e compostos', professor:'Débora Cabral Nazario'},
-	{titulo:'Porcentagem', professor:'Débora Cabral Nazario'}]">
+	<div class="jumbotron">
+		<div ng-app="lista" ng-controller="formulario" ng-init="plan=[
+		{titulo:'Adição e subtração de números naturais', professor:'Charles Miers'},
+		{titulo:'Multiplicação e divisão de números naturais', professor:'Charles Miers'},
+		{titulo:'Números primos e compostos', professor:'Débora Cabral Nazario'},
+		{titulo:'Porcentagem', professor:'Allan Rodrigo Leite'}]">
 
-		<div>
-			Filtro: <input type="text" ng-model="filtro">
-			<a class="btn btn-primary" href="planning/new_planning.html" role="button">Add</a>
+			<div style="height: 4rem;">
+				Filtro: <input type="text" ng-model="filtro">
+				<a class="btn btn-primary" href="planning/new_planning.html" role="button">Add</a>
+			</div>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th scope="col">Class.</th>
+						<th scope="col" ng-click="ordenar('titulo')"><label>Título</label></th>
+						<th scope="col" ng-click="ordenar('professor')"><label>Professor</label></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="c in plan | filter : filtro | orderBy:ordenador" ng-class-odd="'impar'">
+						<th scope="row">{{$index + 1}}</td>
+						<td><a href="planning/planning.html">{{c.titulo}}</a></td>
+						<td>{{c.professor}}</td>
+					</tr>
+				</tbody>
+			<table>
 		</div>
-		<table class="table table-hover">
-			<thead>
-				<tr>
-					<th scope="col">Class.</th>
-					<th scope="col" ng-click="ordenar('titulo')"><label>Título</label></th>
-					<th scope="col" ng-click="ordenar('professor')"><label>Professor</label></th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr ng-repeat="c in plan | filter : filtro | orderBy:ordenador" ng-class-odd="'impar'">
-					<th scope="row">{{$index + 1}}</td>
-					<td><a href="planning/planning.html">{{c.titulo}}</a></td>
-					<td>{{c.professor}}</td>
-				</tr>
-			</tbody>
-		<table>
 	</div>
-
 	<script type="text/javascript"
 		src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 

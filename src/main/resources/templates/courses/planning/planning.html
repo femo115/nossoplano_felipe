@@ -23,7 +23,35 @@
 	<nav class="navbar navbar-dark bg-dark">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">Entrar</a>
+				<a class="navbar-brand text-white" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Entrar</a>
+				<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalLabel">Autenticação</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<form>
+									<div class="form-group">
+										<label for="exampleInputEmail1">Email</label>
+										<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entre com email">
+									</div>
+									<div class="form-group">
+										<label for="exampleInputPassword1">Senha</label>
+										<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+									</div>						
+								</form>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+								<button type="button" class="btn btn-primary">Entrar</button>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
@@ -32,35 +60,27 @@
 			</div>
 		</div>
 	</nav>
-	<div style="height: 5rem;">
-		<h3> Porcentagem </h3>
+	<div style="height: 5rem;"></div>
+	<div class="jumbotron">
+		<h1 class="display-3">Porcentagem</h1>
+		<p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+		<hr class="my-4">
+		<p class="text-justify">É importante questionar o quanto a execução dos pontos do programa facilita a criação das condições financeiras e 
+		administrativas exigidas. O cuidado em identificar pontos críticos na crescente influência da mídia garante a contribuição 
+		de um grupo importante na determinação das diretrizes de desenvolvimento para o futuro. As experiências acumuladas demonstram 
+		que o consenso sobre a necessidade de qualificação exige a precisão e a definição do sistema de formação de quadros que 
+		corresponde às necessidades. O incentivo ao avanço tecnológico, assim como a valorização de fatores subjetivos agrega 
+		valor ao estabelecimento das condições inegavelmente apropriadas. Do mesmo modo, o julgamento imparcial das eventualidades 
+		afeta positivamente a correta previsão das posturas dos órgãos dirigentes com relação às suas atribuições.</p>
+		
+		<p class="text-justify">Pensando mais a longo prazo, o desenvolvimento contínuo de distintas formas de atuação assume importantes posições no 
+		estabelecimento das direções preferenciais no sentido do progresso. Nunca é demais lembrar o peso e o significado destes 
+		problemas, uma vez que a complexidade dos estudos efetuados nos obriga à análise do retorno esperado a longo prazo.</p>
+		
+		<p class="lead">
+			<a class="btn btn-primary btn-lg" href="#" role="button">Download</a>
+		</p>
 	</div>
-	<form>
-		<div class="form-group">
-			<label for="exampleFormControlInput1">Email address</label>
-			<input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-		</div>
-		<div class="form-group">
-			<label for="exampleFormControlSelect1">Example select</label>
-			<select class="form-control" id="exampleFormControlSelect1">
-				<option>1</option>
-				<option>2</option>
-				<option>3</option>
-				<option>4</option>
-				<option>5</option>
-			</select>
-		</div>
-		<div class="form-group">
-			<label for="exampleFormControlSelect2">Example multiple select</label>
-			<select multiple class="form-control" id="exampleFormControlSelect2">
-				<option>1</option>
-				<option>2</option>
-				<option>3</option>
-				<option>4</option>
-				<option>5</option>
-			</select>
-		</div>
-	</form>
 	<div class="col-md-10">
 		<div class="container-fluid well span8">
 			<div class="panel panel-default">
@@ -75,39 +95,40 @@
 		</div>
 	</div>
 	<div style="height: 1rem;"></div>
-	<h2>Comentários:</h2>
-	
-	<div class="media">
-		<img class="align-self-start mr-3" src="images\Smile.png" alt="Generic placeholder image" height="64" width="64">
-			<div class="media-body">
-			<h5 class="mt-0">Fulano</h5>
-			<p>Este planejameno é muito empolgante e com certeza irei utilizar nas minhas proximas aulas.</p>
+	<div class="jumbotron">
+		<h2>Comentários:</h2>
+		
+		<div class="media">
+			<img class="align-self-start mr-3" src="images\Smile.png" alt="Generic placeholder image" height="64" width="64">
+				<div class="media-body">
+				<h5 class="mt-0">Fulano</h5>
+				<p>Este planejameno é muito empolgante e com certeza irei utilizar nas minhas proximas aulas.</p>
+			</div>
+		</div>
+		<div style="height: 1rem;"></div>
+		<div class="media">
+			<img class="align-self-start mr-3" src="images\Trollface_(2).jpg" alt="Generic placeholder image" height="64" width="64">
+				<div class="media-body">
+				<h5 class="mt-0">Ciclano</h5>
+				<p>Uma maravilha.</p>
+			</div>
+		</div>
+		<div style="height: 1rem;"></div>
+		<div class="media">
+			<img class="align-self-start mr-3" src="images\tinking.jpg" alt="Generic placeholder image" height="64" width="64">
+				<div class="media-body">
+				<h5 class="mt-0">Beltrano</h5>
+				<p>Muito intrigante.</p>
+			</div>
+		</div>
+		<div style="height: 1rem;"></div>
+		<div class="media">
+			<img class="align-self-start mr-3" src="images\11495678.jpg" alt="Generic placeholder image" height="64" width="64">
+				<div class="media-body">
+				<h5 class="mt-0">Dispundio</h5>
+				<p>Excelente!</p>
+			</div>
 		</div>
 	</div>
-	<div style="height: 1rem;"></div>
-	<div class="media">
-		<img class="align-self-start mr-3" src="images\Trollface_(2).jpg" alt="Generic placeholder image" height="64" width="64">
-			<div class="media-body">
-			<h5 class="mt-0">Ciclano</h5>
-			<p>Uma maravilha.</p>
-		</div>
-	</div>
-	<div style="height: 1rem;"></div>
-	<div class="media">
-		<img class="align-self-start mr-3" src="images\tinking.jpg" alt="Generic placeholder image" height="64" width="64">
-			<div class="media-body">
-			<h5 class="mt-0">Beltrano</h5>
-			<p>Muito intrigante.</p>
-		</div>
-	</div>
-	<div style="height: 1rem;"></div>
-	<div class="media">
-		<img class="align-self-start mr-3" src="images\11495678.jpg" alt="Generic placeholder image" height="64" width="64">
-			<div class="media-body">
-			<h5 class="mt-0">Dispundio</h5>
-			<p>Excelente!</p>
-		</div>
-	</div>
-	
 </body>
 </html>
