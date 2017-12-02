@@ -17,7 +17,11 @@
 
 <link rel="stylesheet" th:href="@{/css/main.css}"
 	href="../../css/main.css" />
-
+<style>
+h3 {
+    text-align: center;
+}
+</style>
 </head>
 <body>
 	<nav class="navbar navbar-dark bg-dark">
@@ -60,46 +64,36 @@
 			</div>
 		</div>
 	</nav>
+	
 	<div style="height: 5rem;">
 		<h3> Novo Planejamento </h3>
 	</div>
-	<form>
-		<div class="form-group">
-			<label class="col-form-label" for="formGroupExampleInput">Título do Planejamento</label>
-			<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-		</div>
-		<div class="form-group">
-			<label class="col-form-label" for="formGroupExampleInput2">Another label</label>
-			<input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-		</div>
-		<div class="form-group">
-			<label for="exampleFormControlTextarea1">Example textarea</label>
-			<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-		</div>
-		<div class="form-group">
-			<label for="exampleFormControlSelect1">Example select</label>
-			<select class="form-control" id="exampleFormControlSelect1">
-				<option>1</option>
-				<option>2</option>
-				<option>3</option>
-				<option>4</option>
-				<option>5</option>
-			</select>
-		</div>
-		<div class="form-group">
-			<label for="exampleFormControlSelect2">Example multiple select</label>
-			<select multiple class="form-control" id="exampleFormControlSelect2">
-				<option>1</option>
-				<option>2</option>
-				<option>3</option>
-				<option>4</option>
-				<option>5</option>
-			</select>
-		</div>
-		<label class="custom-file">
-			<input type="file" id="file2" class="custom-file-input">
-			<span class="custom-file-control"></span>
-		</label>
-	</form>	
+	
+	<div class="jumbotron">
+		<form>
+			<div class="form-row">
+				<div class="form-group  col-md-6">
+					<label class="col-form-label" for="formGroupExampleInput">Título</label>
+					<input type="text" class="form-control" id="formGroupExampleInput" required>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="exampleFormControlTextarea1">Texto para Introdução</label>
+				<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escreve uma breve introdução do conteúdo..." required></textarea>
+			</div>
+			<div class="form-group">
+				<label for="exampleFormControlTextarea1">Conteúdo Completo</label>
+				<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escreva todo o conteúdo escrito do planejamento..." required></textarea>
+			</div>
+			<div class="form-group">
+				<label class="custom-file">
+					<input type="file" id="file2" class="custom-file-input">
+					<span class="custom-file-control">Escolher Arquivo</span>
+				</label>
+			</div>
+			
+			<button type="submit" class="btn btn-primary">Efetivar</button>
+		</form>
+	</div>
 </body>
 </html>
