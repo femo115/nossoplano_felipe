@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Nosso Plano</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script src="angular.min.js"></script>
+
+<!--
+<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"></link>
+<script src="/webjars/jquery/3.2.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+-->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" th:href="@{/css/main.css}"
+	href="../../css/main.css" />
+<style>
+	h3 {
+		text-align: center;
+	}
+</style>
+</head>
+<script>
+var app = angular.module('lista',[]);
+app.controller('formulario', function($scope) {
+    $scope.plan = [{titulo:'Joao', professor:'Brasil'}, {titulo:'Claudia', professor:'China'}, {titulo:'Marli', professor:'Índia'}];
+    $scope.ordenador = "titulo";
+    $scope.ordenar = function(campo){
+    	$scope.ordenador = campo;
+    }
+});
+</script>
+<body>
+	<nav class="navbar navbar-dark bg-dark">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Entrar</a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Minha Conta</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div style="height: 5rem;">
+		<h3> Lista de Planejamentos </h3>
+	</div>
+	
+	<div ng-app="lista" ng-controller="formulario" ng-init="plan=[
+	{titulo:'Adição e subtração de números naturais', professor:'Charles Miers'},
+	{titulo:'Multiplicação e divisão de números naturais', professor:'Charles Miers'},
+	{titulo:'Números primos e compostos', professor:'Débora Cabral Nazario'},
+	{titulo:'Porcentagem', professor:'Débora Cabral Nazario'}]">
+
+		<div>
+			Filtro: <input type="text" ng-model="filtro">
+			<a class="btn btn-primary" href="planning/new_planning.html" role="button">Add</a>
+		</div>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th scope="col">Class.</th>
+					<th scope="col" ng-click="ordenar('titulo')"><label>Título</label></th>
+					<th scope="col" ng-click="ordenar('professor')"><label>Professor</label></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="c in plan | filter : filtro | orderBy:ordenador" ng-class-odd="'impar'">
+					<th scope="row">{{$index + 1}}</td>
+					<td><a href="planning/planning.html">{{c.titulo}}</a></td>
+					<td>{{c.professor}}</td>
+				</tr>
+			</tbody>
+		<table>
+	</div>
+
+	<script type="text/javascript"
+		src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+</html>
